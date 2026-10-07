@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orçamento Fácil — crie, salve e envie orçamentos profissionais pelo WhatsApp.">
+    <title>Orçamento Fácil</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+<header class="header">
+    <div class="container header-content">
+        <a href="#" class="logo" aria-label="Orçamento Fácil">
+            <span class="logo-icon">✓</span>
+            <span>Orçamento<span class="logo-highlight">Fácil</span></span>
+        </a>
+
+        <nav class="navigation" aria-label="Navegação principal">
+            <a href="#criar-orcamento">Criar</a>
+            <a href="#historico">Histórico</a>
+            <a href="#recursos">Recursos</a>
+        </nav>
+
+        <a href="#criar-orcamento" class="button button-small">Novo orçamento</a>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge">🚀 MVP funcional</span>
+                <h1>Orçamentos profissionais sem complicação.</h1>
+                <p class="hero-description">
+                    Crie seu orçamento, adicione serviços, salve uma cópia no navegador,
+                    gere uma versão para impressão/PDF e envie direto pelo WhatsApp.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#criar-orcamento" class="button button-large">Criar meu orçamento</a>
+                    <a href="#historico" class="button button-outline button-large">Ver histórico</a>
+                </div>
+
+                <div class="hero-info">
+                    <div class="hero-info-item">
+                        <strong>Multi-itens</strong>
+                        <span>Quantos serviços precisar</span>
+                    </div>
+                    <div class="hero-info-item">
+                        <strong>WhatsApp</strong>
+                        <span>Mensagem pronta</span>
+                    </div>
+                    <div class="hero-info-item">
+                        <strong>PDF</strong>
+                        <span>Pronto para imprimir</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-preview" aria-hidden="true">
+                <div class="preview-window">
+                    <div class="preview-top">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                    <div class="quote-card">
+                        <div class="quote-header">
+                            <div>
+                                <span class="quote-label">ORÇAMENTO</span>
+                                <h3>João Serviços</h3>
+                            </div>
+                            <span class="quote-number">#000001</span>
+                        </div>
+
+                        <div class="quote-client">
+                            <span>Cliente</span>
+                            <strong>Maria Oliveira</strong>
+                        </div>
+
+                        <div class="quote-items">
+                            <div class="quote-item">
+                                <div>
+                                    <strong>Instalação elétrica</strong>
+                                    <span>2 × R$ 150,00</span>
+                                </div>
+                                <strong>R$ 300,00</strong>
+                            </div>
+                        </div>
+
+                        <div class="quote-total">
+                            <span>Total</span>
+                            <strong>R$ 300,00</strong>
+                        </div>
+
+                        <div class="whatsapp-button">Enviar pelo WhatsApp</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos" class="section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-tag">RECURSOS</span>
+                <h2>O básico que um cliente realmente precisa</h2>
+                <p>Uma base enxuta para validar a ideia antes de investir em um backend.</p>
+            </div>
+
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Vários itens</h3>
+                    <p>Monte orçamentos com serviços e produtos diferentes.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Salvar localmente</h3>
+                    <p>Os orçamentos ficam salvos no navegador para testar o fluxo.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">🖨️</div>
+                    <h3>PDF / impressão</h3>
+                    <p>Use a impressão do navegador para salvar o orçamento em PDF.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p>Gere uma mensagem com cliente, itens e valor total.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="criar-orcamento" class="section section-gray">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-tag">CRIAR ORÇAMENTO</span>
+                <h2>Monte e revise antes de enviar</h2>
+                <p>Os valores e o documento do lado direito atualizam automaticamente.</p>
+            </div>
+
+            <div class="dashboard">
+                <div class="form-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Dados do orçamento</h3>
+                            <span class="small-muted">Configurações ficam neste navegador.</span>
+                        </div>
+                        <span class="status">Rascunho</span>
+                    </div>
+
+                    <form id="quoteForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="empresa">Nome da empresa</label>
+                                <input id="empresa" type="text" placeholder="Ex.: João Serviços" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="whatsapp">WhatsApp da empresa</label>
+                                <input id="whatsapp" type="tel" placeholder="(18) 99999-9999">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cliente">Nome do cliente</label>
+                                <input id="cliente" type="text" placeholder="Nome completo" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefoneCliente">WhatsApp do cliente</label>
+                                <input id="telefoneCliente" type="tel" placeholder="(18) 99999-9999">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="validade">Validade</label>
+                                <input id="validade" type="text" placeholder="Ex.: 7 dias">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pagamento">Pagamento</label>
+                                <input id="pagamento" type="text" placeholder="Ex.: Pix, cartão ou dinheiro">
+                            </div>
+                        </div>
+
+                        <div class="items-header">
+                            <div>
+                                <h3>Itens</h3>
+                                <span class="small-muted">Adicione quantos serviços precisar.</span>
+                            </div>
+
+                            <button type="button" id="addItem" class="button button-outline button-mini">
+                                + Adicionar item
+                            </button>
+                        </div>
+
+                        <div id="itemsContainer" class="items-container"></div>
+
+                        <div class="form-group">
+                            <label for="observacoes">Observações</label>
+                            <textarea id="observacoes" rows="4" placeholder="Prazo, condições, observações..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="button button-full">Atualizar orçamento</button>
+                            <button type="button" id="saveQuote" class="button button-outline button-full">Salvar no histórico</button>
+                            <button type="button" id="clearForm" class="text-button">Limpar formulário</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-card preview-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Prévia</h3>
+                            <span class="small-muted">Versão que o cliente verá.</span>
+                        </div>
+
+                        <span id="previewStatus" class="status">Rascunho</span>
+                    </div>
+
+                    <div id="quoteDocument" class="document-preview">
+                        <div class="document-head">
+                            <div>
+                                <div id="documentLogo" class="document-logo">✓</div>
+                                <h3 id="previewCompany">Sua empresa</h3>
+                                <p id="previewCompanyWhatsapp" class="document-contact">WhatsApp não informado</p>
+                            </div>
+
+                            <div class="document-meta">
+                                <span>ORÇAMENTO</span>
+                                <strong id="previewNumber">#000001</strong>
+                                <small id="previewDate"></small>
+                            </div>
+                        </div>
+
+                        <div class="document-line"></div>
+
+                        <div class="document-client">
+                            <span>CLIENTE</span>
+                            <strong id="previewClient">Nome do cliente</strong>
+                            <small id="previewClientPhone">WhatsApp não informado</small>
+                        </div>
+
+                        <div id="previewItems" class="document-items"></div>
+
+                        <div class="document-total">
+                            <span>TOTAL</span>
+                            <strong id="previewTotal">R$ 0,00</strong>
+                        </div>
+
+                        <div class="document-details">
+                            <div>
+                                <span>Validade</span>
+                                <strong id="previewValidity">Não informado</strong>
+                            </div>
+                            <div>
+                                <span>Pagamento</span>
+                                <strong id="previewPayment">Não informado</strong>
+                            </div>
+                        </div>
+
+                        <div class="document-notes">
+                            <span>OBSERVAÇÕES</span>
+                            <p id="previewNotes">Nenhuma observação.</p>
+                        </div>
+
+                        <p class="document-footer">Obrigado pela preferência!</p>
+                    </div>
+
+                    <div class="preview-actions">
+                        <button type="button" id="printQuote" class="button button-outline button-full">🖨️ PDF / Imprimir</button>
+                        <button type="button" id="sendWhatsApp" class="button button-full">💬 Enviar WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="historico" class="section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-tag">HISTÓRICO</span>
+                <h2>Orçamentos salvos</h2>
+                <p>Boa base para, depois, migrarmos para login e banco de dados.</p>
+            </div>
+
+            <div id="historyList" class="history-list"></div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <div>
+            <a href="#" class="logo footer-logo">
+                <span class="logo-icon">✓</span>
+                <span>Orçamento<span class="logo-highlight">Fácil</span></span>
+            </a>
+            <p>Simplificando seus orçamentos.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#criar-orcamento">Criar</a>
+            <a href="#historico">Histórico</a>
+            <a href="#recursos">Recursos</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Orçamento Fácil. MVP.</p>
+    </div>
+</footer>
+</body>
+</html>
